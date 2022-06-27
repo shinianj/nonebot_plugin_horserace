@@ -3,3 +3,6 @@
 该插件由zhenxun_bot_HorseRace适配，原作者为冥乐
 感谢原作者支持和帮助，还有许多的nonebot2大佬帮忙教授适配此插件
 请不要在使用此插件时出现报错去找原作者（冲我来，是我适配的，发issue，我已经准备好赴死了）
+#安装
+pip install nonebot_plugin_horserace
+#目前无nb plugin install版本，请不要自主使用那个命令
