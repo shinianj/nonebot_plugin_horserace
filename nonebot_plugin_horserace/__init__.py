@@ -28,7 +28,7 @@ usage：
 __plugin_des__ = "真寻小赌场-赛马场"
 __plugin_cmd__ = ["赛马创建/加入[名称]/开始"]
 __plugin_type__ = ("真寻小赌场",)
-__plugin_version__ = 2.0
+__plugin_version__ = 2.1
 __plugin_author__ = "冥乐"
 __plugin_settings__ = {
     "level": 5,
@@ -135,7 +135,7 @@ async def _(bot: Bot, event: GroupMessageEvent, arg: Message = CommandArg()):
 #场地显示
         display += race[group].display()
         logger.info(f'事件输出:\n {display}')
-        ima = Text2Image.from_text(display, 20, fill="black").to_image()
+        ima = Text2Image.from_text(display, 20, fill="black").to_image("white")
         imgByteArr = io.BytesIO()
         ima.save(imgByteArr,format="PNG")
         await RaceStart.send(MessageSegment.image(imgByteArr))
