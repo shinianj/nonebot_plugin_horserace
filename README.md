@@ -45,6 +45,8 @@ pip3 install nonebot_plugin_horserace
 
 事件详细模板.txt
 
+写完的json文件放入events包中就能跑了（除非你写错了，在加载事件时会失败，但不会影响其他事件加载也不会让你的bot崩了）
+
 ### 如果可以，请给给此项目 上传事件包，让更多人能玩到你的创意
 
 点击nonebot_plugin_horserace，进入events目录，点击网页目录同一栏的Add file中的Create new file
