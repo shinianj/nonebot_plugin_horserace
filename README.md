@@ -9,10 +9,12 @@
 请不要在使用此插件时出现报错去找原作者（冲我来，是我适配的，发issue，我已经准备好赴死了）
 
 
-###安装方式
+### 安装方式
 
 win:pip install nonebot_plugin_horserace
+
 linux:pip3 install nonebot_plugin_horserace
+
 特别注意:此插件暂无nb plugin install 安装方式（toml太烦了，以后看看无聊再写吧），请不要自主使用该方式下载
 
 
