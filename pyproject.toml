@@ -6,7 +6,7 @@ authors = ["shinian <2581846402@qq.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.8"
 nonebot-adapter-onebot = "^2.1.1"
 nonebot2 = "^2.0.0-beta.4"
 nonebot-plugin-imageutils = "^0.1.6"
