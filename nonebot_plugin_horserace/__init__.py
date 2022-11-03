@@ -1,4 +1,3 @@
-﻿
 import math
 import time
 import json
@@ -139,7 +138,7 @@ async def _(bot: Bot, event: GroupMessageEvent, arg: Message = CommandArg()):
         imgByteArr = io.BytesIO()
         ima.save(imgByteArr,format="PNG")
         await RaceStart.send(MessageSegment.image(imgByteArr))
-        time.sleep(2)
+        await asyncio.sleep(2)
 #全员失败计算
         if race[group].is_die_all():
             del race[group]
@@ -148,11 +147,11 @@ async def _(bot: Bot, event: GroupMessageEvent, arg: Message = CommandArg()):
         winer = race[group].is_win_all()
         if winer != f"":
             await RaceStart.send(f'> 比赛结束\n> 赫尔正在为您生成战报...')
-            time.sleep(2)
+            await asyncio.sleep(2)
             del race[group]
             msg = "比赛已结束，胜者为：" + winer
             await RaceStart.finish(msg)
-        time.sleep(4)
+        await asyncio.sleep(4)
 
 @RaceReStart.handle()
 async def _(bot: Bot, event: MessageEvent, arg: Message = CommandArg()):
