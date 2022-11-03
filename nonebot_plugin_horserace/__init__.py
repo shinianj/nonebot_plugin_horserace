@@ -1,10 +1,10 @@
-﻿
+import asyncio
 import math
 import time
 import json
 import os
 import io
-from nonebot import on_command
+from nonebot import on_command, require
 from nonebot.adapters.onebot.v11 import Bot, GroupMessageEvent, MessageEvent, Message, MessageSegment
 from nonebot.permission import SUPERUSER
 from nonebot.params import CommandArg
@@ -12,6 +12,8 @@ from nonebot.log import logger
 from .start import *
 from .race_group import race_group
 from .setting import  *
+
+require("nonebot_plugin_imageutils")
 from nonebot_plugin_imageutils import Text2Image
 
 __zx_plugin_name__ = "赛马"
@@ -139,7 +141,7 @@ async def _(bot: Bot, event: GroupMessageEvent, arg: Message = CommandArg()):
         imgByteArr = io.BytesIO()
         ima.save(imgByteArr,format="PNG")
         await RaceStart.send(MessageSegment.image(imgByteArr))
-        time.sleep(2)
+        await asyncio.sleep(2)
 #全员失败计算
         if race[group].is_die_all():
             del race[group]
@@ -148,11 +150,11 @@ async def _(bot: Bot, event: GroupMessageEvent, arg: Message = CommandArg()):
         winer = race[group].is_win_all()
         if winer != f"":
             await RaceStart.send(f'> 比赛结束\n> 赫尔正在为您生成战报...')
-            time.sleep(2)
+            await asyncio.sleep(2)
             del race[group]
             msg = "比赛已结束，胜者为：" + winer
             await RaceStart.finish(msg)
-        time.sleep(4)
+        await asyncio.sleep(4)
 
 @RaceReStart.handle()
 async def _(bot: Bot, event: MessageEvent, arg: Message = CommandArg()):
