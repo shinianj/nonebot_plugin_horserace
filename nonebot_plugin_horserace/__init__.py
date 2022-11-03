@@ -4,7 +4,7 @@ import time
 import json
 import os
 import io
-from nonebot import on_command
+from nonebot import on_command, require
 from nonebot.adapters.onebot.v11 import Bot, GroupMessageEvent, MessageEvent, Message, MessageSegment
 from nonebot.permission import SUPERUSER
 from nonebot.params import CommandArg
@@ -12,6 +12,8 @@ from nonebot.log import logger
 from .start import *
 from .race_group import race_group
 from .setting import  *
+
+require("nonebot_plugin_imageutils")
 from nonebot_plugin_imageutils import Text2Image
 
 __zx_plugin_name__ = "赛马"
